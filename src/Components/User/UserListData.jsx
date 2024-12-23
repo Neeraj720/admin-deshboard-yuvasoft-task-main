@@ -12,7 +12,7 @@ import Loader from '../../Components/Loading/Loader'
 
 function UserListData() {
     const { user, allUserData,isLoading } = useSelector((state) => state.auth)
-
+    console.log("user list")
     // console.log(allUserData)
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -88,7 +88,9 @@ function UserListData() {
                                                               <td>
                                                                   <FaEye style={{ marginRight: '1rem' }} size={20} onClick={() => handleUserDetails(user.id)} />
                                                                   <MdModeEdit style={{ marginRight: '1rem' }} size={20} onClick={() => handleUserUpdate(user.id)} />
-                                                                  <MdDelete data-toggle="modal" data-target="#exampleModal" style={{ marginRight: '1rem' }} size={20} onClick={() => handleShowModel(user.id)} />
+                                                                  {/* <MdDelete data-toggle="modal" data-target="#exampleModal" style={{ marginRight: '1rem' }} size={20} onClick={() => handleShowModel(user.id)} />
+                                                                   */}
+                                                                   <button className='btn btn-danger' onClick={() => handleShowModel(user.id)}>Delete</button>
                                                               </td>
                                                           </tr>
                                                       </>
