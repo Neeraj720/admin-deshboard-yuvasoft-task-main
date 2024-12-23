@@ -92,7 +92,7 @@ function UserUpdate() {
                                                     </div>
                                                 )}
                                             </div>
-                                            <div className="form-group">
+                                            {/* <div className="form-group">
                                                 <label className="form-control-label">Password</label>
                                                 <input
                                                     type="password"
@@ -107,7 +107,7 @@ function UserUpdate() {
                                                         {formik.errors.password}
                                                     </div>
                                                 )}
-                                            </div>
+                                            </div> */}
                                             <div className="form-group">
                                                 <button className="btn btn-primary" type='submit'>{isLoading ? "Loading...":"Update"}</button>
                                             </div>
