@@ -55,10 +55,8 @@ function UserListData() {
         setDeleteItemId(null)
     }
     // Delete Product
-    const handleDeleteUser = (id) => {
-        console.log("delete")
-        dispatch(deleteUser(id))
-        // dispatch(deleteUser(deleteItemId))
+    const handleDeleteUser = () => {
+        dispatch(deleteUser(deleteItemId))
         handleCloseModel()
     }
     return (
@@ -90,9 +88,7 @@ function UserListData() {
                                                               <td>
                                                                   <FaEye style={{ marginRight: '1rem' }} size={20} onClick={() => handleUserDetails(user.id)} />
                                                                   <MdModeEdit style={{ marginRight: '1rem' }} size={20} onClick={() => handleUserUpdate(user.id)} />
-                                                                  {/* <MdDelete data-toggle="modal" data-target="#exampleModal" style={{ marginRight: '1rem' }} size={20} onClick={() => handleShowModel(user.id)} />
-                                                                   */}
-                                                                   <button className='btn btn-danger' onClick={() => handleDeleteUser(user.id)}>Delete</button>
+                                                                  <MdDelete data-toggle="modal" data-target="#exampleModal" style={{ marginRight: '1rem' }} size={20} onClick={() => handleShowModel(user.id)} />
                                                               </td>
                                                           </tr>
                                                       </>
