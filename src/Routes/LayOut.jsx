@@ -16,13 +16,8 @@ import ProductForm from "../Pages/Product/ProductForm";
 import { useSelector } from "react-redux";
 
 function LayOut() {
-  const { userToken } = useSelector((state) => state.auth);
+  const {userToken} = useSelector((state) => state.auth);
   const navigate = useNavigate();
-  useEffect(() => {
-    if (userToken) {
-      navigate("/user/deshboard");
-    }
-  }, [userToken]);
   return (
     <>
       <Header />
