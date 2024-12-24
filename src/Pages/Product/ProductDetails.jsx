@@ -8,7 +8,6 @@ import imageNotFound from '../../assets/img/imgNotFound.png'
 function ProductDetails() {
    const {id} = useParams()
    const {isLoading , productInfo} = useSelector((state) => state.product)
-  //  console.log(productInfo,"productInfo")
    const dispatch = useDispatch()
    useEffect(() =>{
     dispatch(getProductDetails(id))

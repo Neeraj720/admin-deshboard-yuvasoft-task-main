@@ -22,7 +22,6 @@ function Register() {
       password: Yup.string().min(6, "password should be of minimum 6 characters length").required("Password is required")
     }),
     onSubmit: (values) => {
-      console.log("Values is :" , values)
       dispatch(createUser(values))
     }
   })

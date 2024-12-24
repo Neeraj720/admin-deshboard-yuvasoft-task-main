@@ -12,8 +12,6 @@ import Loader from '../../Components/Loading/Loader'
 
 function UserListData() {
     const { user, allUserData,isLoading } = useSelector((state) => state.auth)
-    console.log("user list")
-    // console.log(allUserData)
     const navigate = useNavigate()
     const dispatch = useDispatch()
     useEffect(() => {

@@ -48,7 +48,6 @@ const slice = createSlice({
         state.isSuccess = false;
       })
       .addCase(createUser.fulfilled, (state, action) => {
-        // console.log("Result:" , action.payload)
         state.isSuccess = true;
         state.isLoading = false;
         state.isError = false;
@@ -56,7 +55,6 @@ const slice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(createUser.rejected, (state, action) => {
-        // console.log("Error:",action.payload)
         state.isError = true;
         state.isLoading = false;
         state.isSuccess = false;
@@ -124,7 +122,6 @@ const slice = createSlice({
         state.isSuccess = false;
       })
       .addCase(getUserDetails.fulfilled, (state, action) => {
-        console.log("user :", action.payload);
         state.isSuccess = true;
         state.isLoading = false;
         state.isError = false;
@@ -164,7 +161,6 @@ const slice = createSlice({
         state.isSuccess = false;
       })
       .addCase(updateUser.fulfilled, (state, action) => {
-        console.log("update user response : ", action.payload);
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
@@ -189,7 +185,6 @@ const slice = createSlice({
         state.message = action.payload;
       })
       .addCase(passwordForgot.rejected, (state, action) => {
-        console.log("Forgot :", action.payload);
         state.isLoading = false;
         state.isSuccess = false;
         state.isError = true;
@@ -245,7 +240,6 @@ export const createUser = createAsyncThunk(
     try {
       return await registerUser(data);
     } catch (error) {
-      // console.log("Error" , error.response.data.message)
       return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
@@ -257,10 +251,8 @@ export const verifyEmail = createAsyncThunk(
   "EMAIL/VERIFY",
   async (varifyData, thunkApi) => {
     try {
-      // console.log("Slice Data is :" , varifyData)
       return await emailVarification(varifyData);
     } catch (error) {
-      // console.log("Error" , error.response.data.message)
       return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
@@ -317,7 +309,6 @@ export const updateUser = createAsyncThunk(
   "UPDATE/USER",
   async (data, thunkApi) => {
     try {
-      // console.log("Data in Slice",data)
       return await userUpdate(data);
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
@@ -329,7 +320,6 @@ export const passwordForgot = createAsyncThunk(
   "FORGOT/PASSWORD",
   async (email, thunkApi) => {
     try {
-      // console.log("Data in Slice",data)
       return await forgotPassword(email);
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
@@ -340,7 +330,6 @@ export const passwordReset = createAsyncThunk(
   "RESET/PASSWORD",
   async (data, thunkApi) => {
     try {
-      // console.log("Data in Slice",data)
       return await resetPassword(data);
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);
@@ -353,7 +342,6 @@ export const googleLogin = createAsyncThunk(
   "GOOGLE/LOGIN",
   async (data, thunkApi) => {
     try {
-      // console.log("Data in Slice",data)
       return await loginGoogle(data);
     } catch (error) {
       return thunkApi.rejectWithValue(error.response.data.message);

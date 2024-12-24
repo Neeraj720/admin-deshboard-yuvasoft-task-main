@@ -54,7 +54,6 @@ const slice = createSlice({
         state.isSuccess = false;
       })
       .addCase(getProductDetails.fulfilled, (state, action) => {
-        // console.log("data :" , action.payload)
         state.productInfo = action.payload;
         state.isLoading = false;
         state.isError = false;
@@ -73,7 +72,6 @@ const slice = createSlice({
         state.isSuccess = false;
       })
       .addCase(productDelete.fulfilled, (state, action) => {
-        console.log(action.payload, "delete payload");
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
@@ -102,7 +100,6 @@ const slice = createSlice({
         state.message = action.payload.message;
       })
       .addCase(productCreate.rejected, (state, action) => {
-        console.log("error:", action.payload);
         state.message = action.payload;
         state.isLoading = false;
         state.isError = true;
@@ -142,7 +139,6 @@ export const getAllProductList = createAsyncThunk(
     try {
       return await getAllProduct();
     } catch (error) {
-      // console.log("Error" , error.response.data.message)
       return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
@@ -155,7 +151,6 @@ export const getProductDetails = createAsyncThunk(
     try {
       return await getSingleProduct(productId);
     } catch (error) {
-      // console.log("Error" , error.response.data.message)
       return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
@@ -168,7 +163,6 @@ export const productDelete = createAsyncThunk(
     try {
       return await deleteProduct(productId);
     } catch (error) {
-      // console.log("Error" , error.response.data.message)
       return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
@@ -181,7 +175,6 @@ export const productCreate = createAsyncThunk(
     try {
       return await createProduct(formData);
     } catch (error) {
-      // console.log("Error" , error.response.data.message)
       return thunkApi.rejectWithValue(error.response.data.message);
     }
   }
@@ -193,7 +186,6 @@ export const productUpdate= createAsyncThunk("UPDATE/PRODUCT" , async(data) =>{
         return await updateProduct(data)
     }
     catch (error) {
-        // console.log("Error" , error.response.data.message)
         return thunkApi.rejectWithValue(error.response.data.message);
       }
 })

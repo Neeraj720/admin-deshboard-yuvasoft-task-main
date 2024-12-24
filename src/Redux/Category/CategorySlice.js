@@ -21,9 +21,7 @@ const slice = createSlice({
         state.isSuccess = false;
         state.isError = false;
       })
-      .addCase(getAllCategoryList.fulfilled,(state,action) =>{
-        console.log("category data:" , action.payload);
-        
+      .addCase(getAllCategoryList.fulfilled,(state,action) =>{        
         state.isLoading = false;
         state.isSuccess = true;
         state.isError = false;
@@ -79,14 +77,9 @@ const slice = createSlice({
       state.isError = false;
     })
     .addCase(updateCategory.fulfilled,(state,action) =>{
-      // console.log(action.payload)
       state.isLoading = false;
       state.isSuccess = true;
       state.isError = false;
-      // const index = state.allCategoryData.findIndex((category) => category._id === action.payload._id)
-      // if(index == -1){
-      //   state.allCategoryData[index] = action.payload
-      // }
       state.categoryUpdateStatus = "Success"
     })
   },

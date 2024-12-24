@@ -15,7 +15,6 @@ export const getSingleProduct = async(productId) =>{
 
 export const deleteProduct = async(productId) =>{
     const response = await axiosInstance.delete(`/product/${productId}`)
-    console.log(response,"response")
     const data = {
         id:productId,
         response:response.data.message
@@ -25,8 +24,7 @@ export const deleteProduct = async(productId) =>{
 // create product
 
 export const createProduct = async(formData) =>{
-    const response = await axiosInstance.post('/product' , formData)
-    console.log(response,"response");   
+    const response = await axiosInstance.post('/product' , formData) 
     return response.data
 }
 

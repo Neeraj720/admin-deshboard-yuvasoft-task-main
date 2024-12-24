@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom'
 import Loader from '../Loading/Loader'
 function ProductListData() {
     const { allProductData } = useSelector((state) => state.product)
-    // console.log("all :", allProductData)
+   
     const navigate = useNavigate()
     const dispatch = useDispatch()
     useEffect(() => {
@@ -47,7 +47,6 @@ function ProductListData() {
     }
     // Delete Product
     const handleDeleteProduct = () => {
-        // console.log(id)
         dispatch(productDelete(deleteItemId))
         handleCloseModel()
     }

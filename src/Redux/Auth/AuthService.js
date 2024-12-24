@@ -2,7 +2,6 @@ import axiosInstance from "../Service/axiosServiceHandler";
 // Create User
 export const registerUser = async(data) =>{
     const response = await axiosInstance.post('/user',data)
-    console.log(response)
     let responseData = {
         response:response.data.data,
         message:response.data.message        
@@ -12,7 +11,6 @@ export const registerUser = async(data) =>{
 // Email Varification
 export const emailVarification = async(data) =>{
     const response = await axiosInstance.get(`/user/email/verification?token=${data.emailVerificationTOken}&userId=${data.id}`)
-    console.log(response)
     return response.data.message
 }
 // Login
@@ -47,7 +45,6 @@ export const userDelete = async(id) =>{
 
 export const userUpdate = async(data) =>{
     const response = await axiosInstance.put(`/user/${data.id}`,data.values)
-    console.log("response :" , response.data)
     return response.data.data
 }
 // forgot password

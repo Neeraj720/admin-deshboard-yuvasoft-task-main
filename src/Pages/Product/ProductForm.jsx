@@ -7,13 +7,11 @@ import { productCreate, productUpdate, resetProductState } from '../../Redux/Pro
 import { toast } from 'react-toastify'
 function ProductForm() {
   const { allCategoryData } = useSelector((state) => state.category)
-  // console.log(allCategoryData , "All")
   const { isSuccess, isLoading, isError, AddStatus, message, productUpdateStatus } = useSelector((state) => state.product)
   const { id } = useParams()
   const { allProductData } = useSelector((state) => state.product)
   const product = allProductData.find((product) => product._id == id)
 
-  console.log(product, "product")
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const [initialValue, setInitialValues] = useState({
@@ -60,8 +58,6 @@ function ProductForm() {
         fdata.append("image", image)
         dispatch(productCreate(fdata))
       }
-
-      // console.log(values)
     }
   })
 
@@ -78,7 +74,6 @@ function ProductForm() {
   // Handle image change
   const handleImageChange = (event) => {
     const file = event.currentTarget.files[0];
-    // console.log(1111,file)
     formik.setFieldValue("image", file);
   }
   return (

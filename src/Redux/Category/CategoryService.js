@@ -15,7 +15,6 @@ export const getSingleCategory = async(userId) =>{
 
 export const categoryCreate = async(data) =>{
     const response = await axiosInstance.post('/category',data)
-    console.log(response)
     return response.data.data
 }
 // Update category

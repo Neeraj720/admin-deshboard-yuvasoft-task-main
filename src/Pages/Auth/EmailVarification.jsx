@@ -6,8 +6,6 @@ import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 function EmailVarification() {
   const {registerUser,isLoading,isSuccess,isError,message,varificationMessage} = useSelector((state) => state.auth)
-  // console.log("Varification msg:" , varificationMessage)
-  // console.log("User :" , registerUser)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const data = {

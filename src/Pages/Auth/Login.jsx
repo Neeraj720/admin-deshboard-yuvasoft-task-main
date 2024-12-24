@@ -25,15 +25,6 @@ function Login() {
       dispatch(loginUser(values))
     }
   })
-  console.log("Login Commit")
-  // useEffect(() => {
-  //   console.log("isSuccess:", isSuccess, "isError:", isError, "message:", message);
-  //   if (isSuccess) {
-  //     dispatch(resetState())
-  //     toast.success("Login Success")
-  //     navigate('/user/deshboard')
-  //   }
-  // }, [isSuccess, dispatch, navigate])
   
   useEffect(() => {
     if (isError && message) {
