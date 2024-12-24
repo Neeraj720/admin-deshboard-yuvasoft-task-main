@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 function Footer() {
     return (
@@ -6,12 +6,18 @@ function Footer() {
             <footer className="footer">
                 <div className="footer__block block no-margin-bottom">
                     <div className="container-fluid text-center">
-                        <p className="no-margin-bottom">2018 &copy; Your company. Download From <a target="_blank" href="https://templateshub.net">Templates Hub</a>.</p>
+                        <p className="no-margin-bottom">
+                            2018 &copy; Your company. Download From{" "}
+                            <a target="_blank" href="https://templateshub.net">
+                                Templates Hub
+                            </a>
+                            .
+                        </p>
                     </div>
                 </div>
             </footer>
         </>
-    )
+    );
 }
 
-export default Footer
+export default Footer;

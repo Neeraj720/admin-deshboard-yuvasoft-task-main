@@ -98,22 +98,6 @@ function UserUpdate() {
                           </div>
                         )}
                       </div>
-                      {/* <div className="form-group">
-                                                <label className="form-control-label">Password</label>
-                                                <input
-                                                    type="password"
-                                                    placeholder="Password"
-                                                    className="form-control"
-                                                    name='password'
-                                                    // onChange={formik.handleChange}
-                                                    // value={formik.values.password}
-                                                />
-                                                {formik.touched.password && formik.errors.password && (
-                                                    <div style={{ color: 'red' }}>
-                                                        {formik.errors.password}
-                                                    </div>
-                                                )}
-                                            </div> */}
                       <div className="form-group">
                         <button className="btn btn-primary" type="submit">
                           {isLoading ? "Loading..." : "Update"}
