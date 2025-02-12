@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllCategoryList } from '../../Redux/Category/CategorySlice'
 import Pagination from '../Pagination/Pagination'
 import { FaEye } from 'react-icons/fa'
-import { MdDelete, MdModeEdit } from 'react-icons/md'
+import { MdModeEdit } from 'react-icons/md'
 import { useNavigate } from 'react-router-dom'
 
 function CategoryListData() {
@@ -49,7 +49,7 @@ function CategoryListData() {
                                 </thead>
                                 <tbody>
                                     {
-                                        currentItems.map((category, index) => {
+                                        currentItems.map((category) => {
                                             return <>
                                                 <tr key={category._id}>
                                                     <td>{category.name}</td>

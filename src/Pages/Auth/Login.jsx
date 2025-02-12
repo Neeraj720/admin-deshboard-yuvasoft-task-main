@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -72,7 +72,7 @@ function Login() {
                   <form className="form-validate" onSubmit={formik.handleSubmit}>
                     <div className="form-group">
                       <input id="login-username" value={formik.values.email} name='email' onChange={formik.handleChange} className="input-material" />
-                      <label for="login-username" className="label-material">Email</label>
+                      <label className="label-material">Email</label>
                       {
                         formik.touched.email && formik.errors.email ? (
                           <>
@@ -85,7 +85,7 @@ function Login() {
                     </div>
                     <div className="form-group">
                       <input id="login-password" type="password" value={formik.values.password} name='password' onChange={formik.handleChange} className="input-material" />
-                      <label for="login-password" className="label-material">Password</label>
+                      <label className="label-material">Password</label>
                       {
                         formik.touched.password && formik.errors.password ? (
                           <>

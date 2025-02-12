@@ -16,7 +16,7 @@ const slice = createSlice({
   extraReducers: (builder) => {
     builder
       // get all category
-      .addCase(getAllCategoryList.pending, (state, action) => {
+      .addCase(getAllCategoryList.pending, (state) => {
         state.isLoading = true;
         state.isSuccess = false;
         state.isError = false;
@@ -35,7 +35,7 @@ const slice = createSlice({
         state.message = action.payload
       })
     //   get single category
-    .addCase(getCategoryDetails.pending,(state,action) =>{
+    .addCase(getCategoryDetails.pending,(state) =>{
         state.isLoading = true;
         state.isSuccess = false;
         state.isError = false;
@@ -53,7 +53,7 @@ const slice = createSlice({
         state.message = action.payload
     })
     // create category
-    .addCase(createCategory.pending,(state,action) =>{
+    .addCase(createCategory.pending,(state) =>{
       state.isLoading = true;
       state.isSuccess = false;
       state.isError = false;
@@ -71,12 +71,12 @@ const slice = createSlice({
       state.message = action.payload
     })
     // Update category
-    .addCase(updateCategory.pending,(state,action)=>{
+    .addCase(updateCategory.pending,(state)=>{
       state.isLoading = true;
       state.isSuccess = false;
       state.isError = false;
     })
-    .addCase(updateCategory.fulfilled,(state,action) =>{
+    .addCase(updateCategory.fulfilled,(state) =>{
       state.isLoading = false;
       state.isSuccess = true;
       state.isError = false;

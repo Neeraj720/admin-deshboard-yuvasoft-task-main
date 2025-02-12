@@ -1,5 +1,4 @@
-import React from 'react'
-
+// eslint-disable-next-line react/prop-types
 function Pagination({ totalPages, currentPage, onPageChange }) {
     const handleNext = () => {
         if (currentPage < totalPages) {
@@ -14,8 +13,8 @@ function Pagination({ totalPages, currentPage, onPageChange }) {
     return (
         <div>
             <nav aria-label="Page navigation example">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item" onClick={handlePrevious}><a class="page-link" >Previous</a></li>
+                <ul className="pagination justify-content-center">
+                    <li className="page-item" onClick={handlePrevious}><a className="page-link" >Previous</a></li>
                     {Array.from({ length: totalPages }, (_, index) => (
                         <li
                             key={index + 1}
@@ -25,7 +24,7 @@ function Pagination({ totalPages, currentPage, onPageChange }) {
                             {index + 1}
                         </li>
                     ))}
-                    <li class="page-item" onClick={handleNext}><a class="page-link">Next</a></li>
+                    <li className="page-item" onClick={handleNext}><a className="page-link">Next</a></li>
                 </ul>
             </nav>
         </div>

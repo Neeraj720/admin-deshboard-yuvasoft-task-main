@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProductList, productDelete } from '../../Redux/Product/ProductSlice'
 import Pagination from '../Pagination/Pagination'
@@ -6,7 +6,6 @@ import { FaEye } from 'react-icons/fa'
 import { MdDelete, MdModeEdit } from 'react-icons/md'
 import imageNotFound from '../../assets/img/imgNotFound.png'
 import { useNavigate } from 'react-router-dom'
-import Loader from '../Loading/Loader'
 function ProductListData() {
     const { allProductData } = useSelector((state) => state.product)
    
@@ -19,7 +18,7 @@ function ProductListData() {
 
     const [currentPage, setCurrentPage] = useState(1)
     const itemPerPage = 5
-    const totelPages = Math.ceil(allProductData?.length / itemPerPage)
+    const totalPages = Math.ceil(allProductData?.length / itemPerPage)
 
     // Current Item Page
 
@@ -75,7 +74,7 @@ function ProductListData() {
                                             </thead>
                                             <tbody>
                                                 {
-                                                    currentItems.map((product, index) => {
+                                                    currentItems.map((product) => {
                                                         return <>
                                                             <tr key={product._id}>
                                                                 <td>
@@ -98,17 +97,17 @@ function ProductListData() {
                                         </table>
                                         {/* Model start */}
                                         {
-                                            showModel && <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            showModel && <div className="modal fade" id="exampleModal" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div className="modal-dialog" role="document">
                                                     <div className="modal-content">
                                                         <div className="modal-header">
-                                                            <h5 className="modal-title" id="exampleModalLabel">Delete</h5>
+                                                            <h5 className="modal-title" id="exampleModalLabel">Delete Product</h5>
                                                             <button type="button" className="close" data-dismiss="modal" aria-label="Close" onClick={handleCloseModel}>
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
                                                         </div>
                                                         <div className="modal-body">
-                                                            are you sure you want to delete user?
+                                                            are you sure you want to delete product?
                                                         </div>
                                                         <div className="modal-footer">
                                                             <button type="button" className="btn btn-secondary" data-dismiss="modal" onClick={handleCloseModel}>No</button>
@@ -126,7 +125,7 @@ function ProductListData() {
                             </div>
                         </div>
                         <div>
-                            <Pagination totalPages={totelPages}
+                            <Pagination totalPages={totalPages}
                                 currentPage={currentPage}
                                 onPageChange={setCurrentPage}
                             />

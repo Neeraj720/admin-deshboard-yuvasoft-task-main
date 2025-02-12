@@ -3,12 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import * as Yup from "yup";
 import { updateUser } from "../../Redux/Auth/AuthSlice";
-import { useEffect } from "react";
 import { toast } from "react-toastify";
 
 function UserUpdate() {
   const { id } = useParams();
-  const { allUserData, isSuccess, isError, isLoading, message, updateStatus } =
+  const { allUserData,  isLoading } =
     useSelector((state) => state.auth);
   const user = allUserData.find((user) => user.id === id);
   const navigate = useNavigate();

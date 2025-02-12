@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Login from "../Pages/Auth/Login";
 import Register from "../Pages/Auth/Register";
 import EmailVarification from "../Pages/Auth/EmailVarification";
@@ -16,7 +15,7 @@ function AppRoute() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/email/varification" element={<EmailVarification />} />
+          <Route path="/email/verification" element={<EmailVarification />} />
           <Route path="/forgot/password" element={<ForgotPassword />} />
           <Route path="*" element={<PageNotFound />} />
           <Route

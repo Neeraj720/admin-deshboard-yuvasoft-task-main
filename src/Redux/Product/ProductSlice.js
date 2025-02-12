@@ -20,7 +20,7 @@ const slice = createSlice({
     productUpdateStatus:""
   },
   reducers: {
-    resetProductState: (state, action) => {
+    resetProductState: (state) => {
       (state.isError = false),
         (state.isSuccess = false),
         (state.isLoading = false),
@@ -30,7 +30,7 @@ const slice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getAllProductList.pending, (state, action) => {
+      .addCase(getAllProductList.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -48,7 +48,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // get single product
-      .addCase(getProductDetails.pending, (state, action) => {
+      .addCase(getProductDetails.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -66,7 +66,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // delete product
-      .addCase(productDelete.pending, (state, action) => {
+      .addCase(productDelete.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -87,7 +87,7 @@ const slice = createSlice({
         state.isSuccess = false;
       })
       // create product
-      .addCase(productCreate.pending, (state, action) => {
+      .addCase(productCreate.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -106,12 +106,12 @@ const slice = createSlice({
         state.isSuccess = false;
       })
     //   update product
-    .addCase(productUpdate.pending,(state,action)=>{
+    .addCase(productUpdate.pending,(state)=>{
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
     })
-    .addCase(productUpdate.fulfilled,(state,action)=>{
+    .addCase(productUpdate.fulfilled,(state)=>{
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
@@ -181,7 +181,7 @@ export const productCreate = createAsyncThunk(
 );
 // update product
 
-export const productUpdate= createAsyncThunk("UPDATE/PRODUCT" , async(data) =>{
+export const productUpdate= createAsyncThunk("UPDATE/PRODUCT" , async(thunkApi,data) =>{
     try{
         return await updateProduct(data)
     }

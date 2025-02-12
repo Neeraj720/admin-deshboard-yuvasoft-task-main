@@ -1,4 +1,3 @@
-import React from 'react'
 import CategoryListData from '../../Components/Category/CategoryListData'
 import { Link } from 'react-router-dom'
 
@@ -19,7 +18,7 @@ function CategoryList() {
                             <Link to='/category/deshboard'>
                                 Home
                             </Link></li>
-                        <li className="breadcrumb-item active">Category's</li>
+                        <li className="breadcrumb-item active">Category&apos;s</li>
                     </ul>
                     <div className="d-flex justify-content-end">
                     <Link to='/category/add' className='btn btn-primary mx-3 mb-3'>Create +</Link>

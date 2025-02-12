@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import * as Yup from "yup";
 import { passwordForgot, resetState } from "../../Redux/Auth/AuthSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -65,7 +65,7 @@ function ForgotPassword() {
                         onChange={formik.handleChange}
                         className="input-material"
                       />
-                      <label for="login-username" className="label-material">
+                      <label className="label-material">
                         Email
                       </label>
                       {formik.touched.email && formik.errors.email ? (

@@ -61,7 +61,7 @@ function ResetPassword() {
               <form className="form-validate" onSubmit={formik.handleSubmit}>
               <div className="form-group">
                     <input id="login-password" type="password" value={formik.values.password} name='password' onChange={formik.handleChange} className="input-material" />
-                    <label for="login-password" className="label-material">Password</label>
+                    <label  className="label-material">Password</label>
                     {
                       formik.touched.password && formik.errors.password ? (
                         <>

@@ -1,7 +1,5 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
 import UserListData from '../../Components/User/UserListData'
-import { useSelector } from 'react-redux'
 
 function UserList() {
     return (
@@ -20,7 +18,7 @@ function UserList() {
                             <Link to='/user/deshboard'>
                                 Home
                             </Link></li>
-                        <li className="breadcrumb-item active">User's</li>
+                        <li className="breadcrumb-item active">User&lsquo;s</li>
                     </ul>
                 </div>
                 <section className="no-padding-top">

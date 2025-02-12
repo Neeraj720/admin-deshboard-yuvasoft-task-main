@@ -1,4 +1,3 @@
-import React from 'react'
 import { IoMdArrowRoundBack } from "react-icons/io";
 function Back() {
     return (

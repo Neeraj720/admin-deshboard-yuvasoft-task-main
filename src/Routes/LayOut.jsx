@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
 import Sidebar from "../Components/NavBar/Sidebar";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import UserList from "../Pages/User/UserList";
 import Header from "../Components/NavBar/Header";
@@ -13,15 +12,12 @@ import CategoryDetails from "../Pages/Category/CategoryDetails";
 import CategoryForm from "../Pages/Category/CategoryForm";
 import ProductDetails from "../Pages/Product/ProductDetails";
 import ProductForm from "../Pages/Product/ProductForm";
-import { useSelector } from "react-redux";
 
 function LayOut() {
-  const {userToken} = useSelector((state) => state.auth);
-  const navigate = useNavigate();
   return (
     <>
       <Header />
-      <div class="d-flex align-items-stretch">
+      <div className="d-flex align-items-stretch">
         <Sidebar />
         <Routes>
           {/* user routes */}

@@ -1,5 +1,5 @@
 import { useFormik } from 'formik'
-import React, { useEffect, useState } from 'react'
+import  { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import * as Yup from 'yup'
@@ -86,7 +86,7 @@ function CategoryForm() {
                                             )}
                                         </div>
                                         <div className="form-group">
-                                            <select name="status" class="form-control mb-3 mb-3" value={formik.values.status} onChange={formik.handleChange}>
+                                            <select name="status" className="form-control mb-3 mb-3" value={formik.values.status} onChange={formik.handleChange}>
                                                 <option value={true}>Active</option>
                                                 <option value={false}>Inactive</option>
                                             </select>

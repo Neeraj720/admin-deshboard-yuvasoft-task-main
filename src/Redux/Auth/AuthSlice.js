@@ -30,7 +30,7 @@ const slice = createSlice({
     // setUpdateUser:(state,action) =>{
     //   state.updateUser = action.payload
     // }
-    resetState: (state, action) => {
+    resetState: (state) => {
       state.isLoading = false;
       state.isError = false;
       state.isSuccess = false;
@@ -42,7 +42,7 @@ const slice = createSlice({
   extraReducers: (builder) => {
     builder
       // Register User
-      .addCase(createUser.pending, (state, action) => {
+      .addCase(createUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -61,7 +61,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // Email Varification
-      .addCase(verifyEmail.pending, (state, action) => {
+      .addCase(verifyEmail.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -78,7 +78,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // Login
-      .addCase(loginUser.pending, (state, action) => {
+      .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -98,7 +98,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // get All users
-      .addCase(getAllUserData.pending, (state, action) => {
+      .addCase(getAllUserData.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -116,7 +116,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // get single user details
-      .addCase(getUserDetails.pending, (state, action) => {
+      .addCase(getUserDetails.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -134,7 +134,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // delete user
-      .addCase(deleteUser.pending, (state, action) => {
+      .addCase(deleteUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -155,12 +155,12 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // Update User
-      .addCase(updateUser.pending, (state, action) => {
+      .addCase(updateUser.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
       })
-      .addCase(updateUser.fulfilled, (state, action) => {
+      .addCase(updateUser.fulfilled, (state) => {
         state.isLoading = false;
         state.isError = false;
         state.isSuccess = true;
@@ -173,7 +173,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // forgot password
-      .addCase(passwordForgot.pending, (state, action) => {
+      .addCase(passwordForgot.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -191,7 +191,7 @@ const slice = createSlice({
         state.message = action.payload;
       })
       // reset password
-      .addCase(passwordReset.pending, (state, action) => {
+      .addCase(passwordReset.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;
@@ -210,7 +210,7 @@ const slice = createSlice({
       })
 
       //  google login
-      .addCase(googleLogin.pending, (state, action) => {
+      .addCase(googleLogin.pending, (state) => {
         state.isLoading = true;
         state.isError = false;
         state.isSuccess = false;

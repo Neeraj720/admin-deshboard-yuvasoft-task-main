@@ -1,7 +1,5 @@
-import React from 'react'
 import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
-import avatar from '../../assets/img/avatar-6.jpg'
 function Sidebar() {
    const navigate = useNavigate()
    const {user} = useSelector((state) => state.auth)
@@ -26,7 +24,7 @@ function Sidebar() {
                 <ul className="list-unstyled">
                     <li>
                         <Link to='/user/deshboard'>
-                            <i class="fa-regular fa-user"></i>User's
+                            <i className="fa-regular fa-user"></i>User&apos;s
                         </Link>
                     </li>
                     {/* <li className="active"><a href="tables.html"> <i className="icon-grid"></i>User's </a></li> */}
